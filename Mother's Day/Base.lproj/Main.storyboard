@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,14 +18,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DcG-Yd-tcE">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DcG-Yd-tcE">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="DcG-Yd-tcE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="QgT-n6-ucB"/>
-                            <constraint firstItem="DcG-Yd-tcE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yvK-fm-AZR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DcG-Yd-tcE" secondAttribute="trailing" constant="-20" id="Esj-KS-eLj"/>
+                            <constraint firstItem="DcG-Yd-tcE" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="JXR-KZ-25d"/>
+                            <constraint firstItem="DcG-Yd-tcE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Ma1-Dj-ixb"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="DcG-Yd-tcE" secondAttribute="bottom" id="brL-AD-DJP"/>
                         </constraints>
                     </view>
                     <connections>
