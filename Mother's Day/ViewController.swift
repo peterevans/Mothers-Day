@@ -18,17 +18,35 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("ViewDidLoad")
         // Do any additional setup after loading the view, typically from a nib
         
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewWillAppear(animated: Bool) {
+        print("called viewWillAppear")
         
-        print("viewDidAppear")
+        randomImageView.image = getRandomImage()
+        print(randomImageView.image)
         
+        print("completed randomImage")
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        print("called viewDidDisappear")
+        print(randomImageView.image)
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func getRandomImage() -> UIImage {
+        
+        print("getting collection")
         let collection = PHAssetCollection.fetchAssetCollectionsWithType(.SmartAlbum, subtype: .SmartAlbumFavorites, options: nil)
         
+        print("getting image")
         let images = PHAsset.fetchAssetsInAssetCollection(collection[0] as! PHAssetCollection, options: nil)
         
         size = images.count
@@ -42,18 +60,7 @@ class ViewController: UIViewController {
         
         print(asset)
         
-        let image = getAssetThumbnail(asset)
-        
-        print(image)
-        
-        randomImageView.image = image
-        
-        print("completed randomImage")
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        return getAssetThumbnail(asset)
     }
     
     func getAssetThumbnail(asset: PHAsset) -> UIImage {
